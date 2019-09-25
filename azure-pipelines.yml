@@ -27,5 +27,5 @@ steps:
   displayName: 'NuGet push'
   inputs:
     command: push
-    publishVstsFeed: '<Frick.Guntner.Acsc.x64.csproj>'
+    publishVstsFeed: '<Frick.Guntner.Acsc.x64>'
     allowPackageConflicts: true
