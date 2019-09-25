@@ -10,18 +10,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
 
 - task: NuGetCommand@2
   inputs:
     command: pack
-    packagesToPack: 'Frick.Guntner.Acsc.x64.csproj'
+    packagesToPack: '**/*.csproj'
 
 - task: NuGetCommand@2
   displayName: 'NuGet push'
