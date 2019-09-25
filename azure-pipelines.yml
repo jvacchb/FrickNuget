@@ -14,11 +14,12 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: pack
-    packagesToPack: '**/*.csproj'
+    packagesToPack: 'Frick.Guntner.Acsc.x64.csproj'
 
 - task: NuGetCommand@2
-  displayName: 'NuGet push'
   inputs:
     command: push
-    publishVstsFeed: '<Frick.Guntner.Acsc.x64.nupkg>'
-    allowPackageConflicts: true
+    nuGetFeedType: external
+    publishFeedCredentials: 'Nuget'
+    versioningScheme: byEnvVar
+    versionEnvVar: Frick.Guntner.Acsc.x64
